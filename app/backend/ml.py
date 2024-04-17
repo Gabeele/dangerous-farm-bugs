@@ -32,7 +32,12 @@ transform=transforms.Compose([
 ])
 
 dir0='./farm_insects'
-class_names=sorted(os.listdir(dir0))
+class_names=sorted([
+    "Africanized Honey Bees (Killer Bees)", "Aphids", "Armyworms",
+    "Brown Marmorated Stink Bugs", "Cabbage Loopers", "Citrus Canker",
+    "Colorado Potato Beetles", "Corn Borers", "Corn Earworms", "Fall Armyworms",
+    "Fruit Flies", "Spider Mites", "Thrips", "Tomato Hornworms", "Western Corn Rootworms"
+])
 
 class DataModule(pl.LightningDataModule):
     
