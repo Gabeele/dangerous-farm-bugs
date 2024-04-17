@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: node:latest
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_API_URL=http://192.168.1.69:5000
+    command: >
+      sh -c "npm install && npm run start"
+
+  backend:
+    image: python:3.8
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=api.py
+      - FLASK_ENV=development
+    command: >
+      sh -c "pip install --upgrade pip && pip install -r requirements.txt && flask run --host=0.0.0.0"

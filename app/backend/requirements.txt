@@ -1,0 +1,13 @@
+Flask
+matplotlib
+numpy
+pandas
+Pillow
+Pillow
+pytorch_lightning
+scikit_learn
+torchvision
+torchvision
+tqdm
+Werkzeug
+Flask_Cors
