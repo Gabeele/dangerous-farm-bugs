@@ -54,10 +54,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>🐛 Dangerous Bug Detector 🦟</h1>
+        <h1>🐛 Dangerous Farm Bug Detector 🦟</h1>
         <p>Keep your farm crop safe! Upload an image to detect if it contains a dangerous bug.</p>
         <form onSubmit={handleSubmit}>
-          <input type="file" onChange={handleFileChange} />
+          <input type="file" accept=".jpg, .jpeg" onChange={handleFileChange} />
           <button type="submit" disabled={loading}>{loading ? 'Detecting...' : 'Detect'}</button>
         </form>
         {imagePreview && (
